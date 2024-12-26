@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #output {
+            margin-top: 20px;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            color: #2e7d32;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Retrieve form values
+            const name = document.getElementById('student-name').value;
+            const rollNumber = document.getElementById('roll-number').value;
+            const department = document.getElementById('department').value;
+
+            const course1 = document.getElementById('course1').value;
+            const course2 = document.getElementById('course2').value;
+            const course3 = document.getElementById('course3').value;
+            const course4 = document.getElementById('course4').value;
+            const course5 = document.getElementById('course5').value;
+
+            // Display details on the page
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <h2>Registration Details</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Roll Number:</strong> ${rollNumber}</p>
+                <p><strong>Department:</strong> ${department}</p>
+                <p><strong>Registered Courses:</strong></p>
+                <ol>
+                    <li>${course1}</li>
+                    <li>${course2}</li>
+                    <li>${course3}</li>
+                    <li>${course4}</li>
+                    <li>${course5}</li>
+                </ol>
+                <p>All the best for your studies!</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <h1>Student Registration Form</h1>
+        <!-- Student Name -->
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="studentName" required>
+
+        <!-- Roll Number -->
+        <label for="roll-number">Roll Number:</label>
+        <input type="text" id="roll-number" name="rollNumber" required>
+
+        <!-- Department -->
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="">--Select Department--</option>
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="ECE">Electronics and Communication Engineering</option>
+            <option value="AIDS">Artificial Intelligence and Data Science</option>
+        </select>
+
+        <label for="Year">YEAR:</label>
+        <select id="department" name="department" required>
+            <option value="">--Select Year--</option>
+            <option value="1st">1 Year</option>
+            <option value="2nd ">2 Year</option>
+            <option value="3rd">3 year</option>
+            <option value="4rd">4 year</option>
+
+        </select>
+
+        <!-- Courses -->
+        <label for="course1">Course 1:</label>
+        <select id="course1" name="course1" required>
+            <option value="">--Select Course--</option>
+            <option value="SDC">Skill Development Course</option>
+            <option value="PDC">Parallel and Distibuting computing</option>
+            <option value="PS2">Problem solving 2</option>
+        </select>
+        <label>Options:</label>
+        <input type="checkbox" name="course1_options" value="Lab"> Lab
+        <input type="checkbox" name="course1_options" value="Practical"> Practical
+        <input type="checkbox" name="course1_options" value="Tutorial"> Tutorial
+
+        <label for="course2">Course 2:</label>
+        <select id="course2" name="course2" required>
+            <option value="">--Select Course--</option>
+            <option value="EPAM">Effective Programming for America</option>
+            <option value="OS">Operating Systems</option>
+            <option value="AI">Artificial Intelligence</option>
+        </select>
+        <label>Options:</label>
+        <input type="checkbox" name="course2_options" value="Lab"> Lab
+        <input type="checkbox" name="course2_options" value="Practical"> Practical
+        <input type="checkbox" name="course2_options" value="Tutorial"> Tutorial
+
+        <label for="course3">Course 3:</label>
+        <select id="course3" name="course3" required>
+            <option value="">--Select Course--</option>
+            <option value="ANN">Artificial neural network</option>
+            <option value="CNP">Computer Networks Protocol</option>
+            <option value="ML">Machine Learning</option>
+        </select>
+        <label>Options:</label>
+        <input type="checkbox" name="course3_options" value="Lab"> Lab
+        <input type="checkbox" name="course3_options" value="Practical"> Practical
+        <input type="checkbox" name="course3_options" value="Tutorial"> Tutorial
+
+        <label for="course4">Course 4:</label>
+        <select id="course4" name="course4" required>
+            <option value="">--Select Course--</option>
+            <option value="PS2">Problem Solving 2</option>
+            <option value="ASE">Adaptive Software Engineering</option>
+            <option value="IoT">Internet of Things</option>
+        </select>
+        <label>Options:</label>
+        <input type="checkbox" name="course4_options" value="Lab"> Lab
+        <input type="checkbox" name="course4_options" value="Practical"> Practical
+        <input type="checkbox" name="course4_options" value="Tutorial"> Tutorial
+
+        <label for="course5">Course 5:</label>
+        <select id="course5" name="course5" required>
+            <option value="">--Select Course--</option>
+            <option value="DP">Deep Learning</option>
+            <option value="DBMS">Database Management System</option>
+            <option value="MERN">MERN</option>
+        </select>
+        <label>Options:</label>
+        <input type="checkbox" name="course5_options" value="Lab"> Lab
+        <input type="checkbox" name="course5_options" value="Practical"> Practical
+        <input type="checkbox" name="course5_options" value="Tutorial"> Tutorial
+
+        <!-- Submit Button -->
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="output"></div>
+</body>
+</html>
